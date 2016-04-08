@@ -1,0 +1,31 @@
+<div class="col-lg-8">
+    <div class="search-result-panel">
+        <div class="panel-heading">
+            <h2><strong>Boulangerie</strong> à <strong>Bordeaux, France</strong></h2>
+        </div>
+        <div class="panel-body">
+            <!--<pre>{{ SRList.etablishments | json }}</pre>-->
+            <!-- ligne-->
+            <div class="row search-row" ng-repeat="etablishment in ctrl.etablishments">
+                <div class="col-lg-4">
+                    <div class="thumbnail">
+                        <img src="http://lorempixel.com/400/200/people">
+                    </div>
+                </div>
+                <div class="etablishment-search-info">
+                    <h3><span class="glyphicon glyphicon-map-marker"></span> {{ etablishment.name }} <span class="pull-right distance">{{ ctrl.formatDistances(etablishment.dist.calculated) }}</span></h3>
+                    <h4>Boulangerie</h4>
+                    <p>{{ etablishment.address }}</p>
+                    <button class="btn btn-warning" ng-click="ctrl.order(etablishment._id)">Commander</button>
+                    <span class="pull-right features">
+                        <span class="glyphicon glyphicon-cog" title="sandwichs custom"></span>
+                        <span class="glyphicon glyphicon-time" title="7/19h - Lundi / Samedi"></span>
+                        <span class="glyphicon glyphicon-calendar" title="Commandes périodiques"></span>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="panel-footer"></div>    
+    </div>
+</div>

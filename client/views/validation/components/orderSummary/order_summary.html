@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4>Récapitulatif de la commande</h4>
+	</div>
+	<div class="panel-body">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="ligne in ctrl.orderSummary">
+				<form class="form-inline">
+					<div class="form-group col-lg-6">
+						<span>{{ ligne.name }}</span> 
+					</div>
+				  	<div class="form-group col-lg-4">
+				    	<label class="sr-only" for="quantityInput">Quantité</label>
+				    	<div class="input-group">
+				      		<div class="input-group-addon">-</div>
+				      		<input ng-change="ctrl.recalculPrice()" ng-model="ligne.nb_selected" type="number" class="form-control" id="quantityInput">
+				      		<div class="input-group-addon">+</div>
+				    	</div>
+				  	</div>
+				  	<div class="form-group col-lg-2">
+				  		<span class="pull-right">{{ ligne.price * ligne.nb_selected}} €</span>
+				  	</div>
+				</form>
+				<div class="clearfix"></div>
+			</li>
+
+		</ul>
+	</div>
+	<div class="panel-footer">
+		<span class="pull-right">TOTAL {{ ctrl.totalPrice }}€</span>
+		<div class="clearfix"></div>
+	</div>
+</div>

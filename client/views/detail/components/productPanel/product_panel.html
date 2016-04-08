@@ -1,0 +1,36 @@
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>{{ ctrl.currentCategory.name }}</h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div ng-if="ctrl.showSteps == true" class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li ng-class="{ active: $index == ctrl.currentStep.position }" ng-repeat="stepName in ctrl.breadcrump">{{ stepName }}</li>
+                    </ol>
+                </div>
+                <div ng-if="ctrl.showSteps == false" ng-repeat="product in ctrl.products" class="col-sm-6 col-md-4">
+                    <div ng-click="ctrl.pickProduct(product)" class="thumbnail">
+                        <img src="http://lorempixel.com/400/200/food/1" alt="...">
+                        <div class="caption">
+                            <center><strong>{{ product.name }}</strong></center>
+                            <center>{{ product.price }}€</center>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="ctrl.showSteps == true" ng-repeat="product in ctrl.currentStep.products_allowed" class="col-sm-6 col-md-4">
+                    <div ng-click="ctrl.startChoice(product)" class="thumbnail">
+                        <img src="http://lorempixel.com/400/200/food/1" alt="...">
+                        <div class="caption">
+                            <center><strong>{{ product.name }}</strong></center>
+                            <center>{{ product.price }}€</center>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>   
+</div>

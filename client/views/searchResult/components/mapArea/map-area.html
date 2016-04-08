@@ -1,0 +1,12 @@
+<div class="right-map-container" data-spy="affix" data-offset-top="117" data-offset-bottom="200">
+	<ui-gmap-google-map 
+			center='ctrl.gmap.position'
+            zoom="ctrl.gmap.zoom"
+            dragging='ctrl.gmap.dragging'
+            refresh='ctrl.gmap.refresh'
+            options="ctrl.gmap.options">
+
+        <ui-gmap-marker ng-repeat="etablishment in ctrl.etablishments" coords="{ latitude : etablishment.location.coordinates[0], longitude: etablishment.location.coordinates[1] }" idkey="etablishment._id">
+        </ui-gmap-marker>
+	</ui-gmap-google-map>
+</div>

@@ -1,0 +1,206 @@
+@import "custom.bootstrap.import.less";
+
+.row-top-small {
+	margin-top: 25px;
+}
+
+.row-top-medium {
+	margin-top: 50px;
+}
+
+.row-top-large {
+	margin-top: 80px;
+}
+
+.row-top-x-large {
+	margin-top: 110px;
+}
+
+
+.logo-banner {
+	.make-row();
+	background-color: white;
+}
+
+.search-result-left-container {
+	margin-top: 20px;
+	background-color: white;
+}
+
+.search-result-panel {
+	.panel-variant(white; @panel-default-text; white; white);
+	border-right: 1px dashed @gray-lighter;
+	> .panel-heading {
+		padding: 0px 10px;
+		border: 1px dashed @gray-lighter;
+		border-right: none;
+		border-radius: 0px;
+		> h2 {
+			font-size: @font-size-base;
+			color: @gray-light;
+		}
+	}
+	> .panel-footer {
+		background-color: white;
+		border: none;
+	}
+	> .panel-body {
+		> .search-row {
+			border-bottom: 1px dashed @gray-lighter;
+			margin-bottom: 5px;
+		}	
+	}
+	
+}
+
+.angular-google-map-container {
+    height: 400px;
+    width: 400px;
+}
+
+.etablishment-search-info {
+	.make-lg-column(8; @gutter: @grid-gutter-width);
+	> h3 {
+		font-size: @font-size-h4;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		color: @brand-primary;
+		font-weight: bold;
+		> .distance {
+			font-size: @font-size-small;
+			color: @gray-light;
+		}
+		+ h4 {
+			font-size: @font-size-small;
+			color: @brand-primary;
+		}
+	}
+	> .features {
+		font-size: @font-size-h3;
+	}
+}
+
+.right-map-container {
+	.make-lg-column(4);
+}
+
+.right-map-container.affix {
+	.make-lg-column(4);
+	position: fixed;
+	top: 45px;
+	right: 0px;
+	right: -3px;
+}
+
+.right-map-container.affix-bottom {
+	.make-lg-column(4);
+	position: fixed;
+	top: 45px;
+	right: 0px;
+	right: -3px;
+}
+
+.content-product-pictures {
+  	.make-lg-column(4);
+  	.collapse-columns();
+}
+
+
+/* home.html -----------------> */
+
+.main-search-bar {
+	> form {
+		> div.type-search {
+			.make-lg-column(5);
+			.collapse-columns();
+			input {
+				border-radius: 0px;
+			}
+			ul.dropdown-menu {
+				width: 100%;
+			}
+		}
+
+		> div.place-search {
+			.make-lg-column(7);
+			.collapse-columns();
+			input {
+				border-radius: 0px;
+			}
+			ul.dropdown-menu {
+				width: 100%;
+			}
+		}
+
+	}
+}
+
+.jumbotron {
+	margin-top: 40px;
+	margin-bottom: 0px;
+	p {
+		text-align: center;
+	}
+}
+
+
+
+
+/* --------- validation et paiment ----------->*/
+
+.logos-cb {
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.make-lg-column(@columns; @gutter: @grid-gutter-width) {
+	position: relative;
+	// Prevent columns from collapsing when empty
+	min-height: 1px;
+	// Inner gutter via padding
+	padding-left:  (@gutter / 2);
+	padding-right: (@gutter / 2);
+
+	// Calculate width based on number of columns available
+	@media (min-width: @screen-lg-min) {
+		float: left;
+		width: percentage((@columns / @grid-columns));
+	}
+}
+// remove margin
+.collapse-columns() {
+	@media (min-width: @screen-lg-min) {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+// Generate the large column offsets
+.make-lg-column-offset(@columns) {
+  	@media (min-width: @screen-lg-min) {
+    	margin-left: percentage((@columns / @grid-columns));
+  	}
+}

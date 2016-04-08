@@ -1,0 +1,36 @@
+<div class="container-fluid">
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3">
+				<p>Commandez en ligne un casse croute chez votre boulanger préféré et
+	  	 			ne faites pas la queue en allant le chercher à midi {{ home.count }}
+	  	 			boulangeries nous font déjà confiance</p>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="row main-search-bar">
+				<form class="form-group" ng-submit="home.search(home.selected, home.place)">
+					<div class="type-search">
+				    	<div class="input-group-lg">
+				      		<input type="text" ng-model="home.selected" typeahead="result as result.name for result in home.predicate($viewValue)" typeahead-no-results="Pas de résultats .." class="form-control" placeholder="J'ai envie de quoi ?">
+
+				    	</div>
+				  	</div>
+				  	<div class="place-search">
+				    	<div class="input-group input-group-lg">
+				      		<input type="text" ng-model="home.place" typeahead="place as place.description for place in home.searchPlace($viewValue)" class="form-control" typeahead-no-results="Pas de résultats .." placeholder="adresse, ville ..">
+				      		<span class="input-group-btn">
+				        		<button class="btn btn-primary" type="submit">Rechercher</button>
+				      		</span>
+				    	</div>
+				  	</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row-top-medium">
+    <div class="col-lg-12">
+        <h1><span class="text-success">{{ ctrl.etablishment.name }} <small><a href="" ng-click="ctrl.goSearchList()">Trouver un autre restaurant</a></small></span></h1>
+        <p>Ouvert du Lundi au samedi 7h/17h</p>
+    </div>
+</div>
+<div class="row-top-small">
+    <categories-items 
+        on-change-category-selected="ctrl.setCurrentCategory(cat, apply)">
+    </categories-items>
+    <product-panel 
+        current-category="ctrl.currentCategory" 
+        on-change-product-selected="ctrl.fillCart(product)">
+    </product-panel>
+    <shopping-cart cart="ctrl.cart"></shopping-cart>
+</div>

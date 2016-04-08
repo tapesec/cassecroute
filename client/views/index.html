@@ -1,0 +1,14 @@
+<head>
+	<title>Casse croute</title>
+	<script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.angular.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfkUQ0fCBFihBXYSEChSWMm6NJgNZR-3g&libraries=places"></script>
+
+	<base href="/"></base>
+</head>
+
+<body ng-app="cassecroute" ng-strict-di="">
+	<!-- nav bar component -->
+	<div ng-include src="'client/views/global/components/nav-bar.html'"></div>
+	<!-- views inside -->
+	<div ui-view=""></div>
+</body>
