@@ -1,6 +1,6 @@
 Meteor.startup(function () {
 
-    /*if (Etablishment.find().count() === 0) {
+    if (Etablishment.find().count() === 0) {
         Etablishment._ensureIndex({'location.coordinates':'2dsphere'});
         var etablishments = [
         {
@@ -17,6 +17,7 @@ Meteor.startup(function () {
             'removed': false
         },
         {
+            '_id': 'SxF8t3m2i8kEBzd2r',
             'name': 'Chez Paul',
             'description': 'Les meilleurs sandwich sont cuisinés chez Paul',
             'createdAt': new Date(),
@@ -34,5 +35,5 @@ Meteor.startup(function () {
         for (var i = 0; i < etablishments.length; i++) {
             Etablishment.insert(etablishments[i]);
         }
-    }*/
+    }
 });
